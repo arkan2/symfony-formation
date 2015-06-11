@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'user' %}
+
+{% form_theme form _self %}
+
+{%- block _app_registration_username_widget -%}
+    {%- set type = type|default('text') -%}
+    {{ block('form_widget_simple') }}
+    <img src="{{ asset('images/user.png') }}" alt=""/>
+{%- endblock _app_registration_username_widget -%}
+
+{% block title 'register.title'|trans %}
+{% block subtitle 'register.subtitle'|trans %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <div>
+            <button type="submit">
+                {{- 'register.form.submit'|trans -}}
+            </button>
+        </div>
+    {{ form_end(form) }}
+
+{% endblock %}

@@ -1,0 +1,15 @@
+homepage:
+    path: /
+    defaults: { _controller: AppBundle:User:login }
+    methods: GET
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}
+    requirements: { _locale: en|fr }
+
+api:
+    resource: "@AppBundle/Controller/Api"
+    type:     annotation
+    prefix:   /api

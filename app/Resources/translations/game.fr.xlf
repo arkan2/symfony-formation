@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="4aa161986c50cdc5f6f94c4ca01dde8c" resname="play.title">
+        <source>play.title</source>
+        <target>Jouer au jeu du Pendu</target>
+      </trans-unit>
+      <trans-unit id="36445df0a950576e8bd81d056f150e56" resname="play.subtitle">
+        <source>play.subtitle</source>
+        <target>Devinez le mot Mystère</target>
+      </trans-unit>
+      <trans-unit id="0bd036667f84ef7bc4d8805ceaab32d7" resname="play.remaining_attempts">
+        <source>play.remaining_attempts</source>
+        <target>
+            ]-Inf, 0] C'est terminé, vous êtes pendu !
+            |{1} Attention, c'est votre dernière chance !
+            |[2,5] Méfiez-vous, il vous reste %count% essais !
+            |]5, 8] Il reste %count% essais !
+            |]8, Inf[ Pas de soucis, vous avez encore %count% essais !
+        </target>
+      </trans-unit>
+      <trans-unit id="d73f4b986ecffbd98ab7df4e2994831e" resname="play.reset_game">
+        <source>play.reset_game</source>
+        <target>Démarrer une nouvelle partie</target>
+      </trans-unit>
+      <trans-unit id="4d3aed89d3c4f3f0046a859a5d5c8e36" resname="play.try_letter">
+        <source>play.try_letter</source>
+        <target>Jouer une lettre</target>
+      </trans-unit>
+      <trans-unit id="4c0a0d012da6a1670fe6f736ee6589f9" resname="play.try_word">
+        <source>play.try_word</source>
+        <target>Jouer un mot</target>
+      </trans-unit>
+      <trans-unit id="cbab3af23e5a19dc9c5d5f080a87616c" resname="play.form.word">
+        <source>play.form.word</source>
+        <target>Mot :</target>
+      </trans-unit>
+      <trans-unit id="87f5fc0e57f3ca223b8b5203e4a829a2" resname="play.form.submit">
+        <source>play.form.submit</source>
+        <target>Deviner</target>
+      </trans-unit>
+      <trans-unit id="b392b8ba83d2a62d36d0fe6e09e055ba" resname="fail.title">
+        <source>fail.title</source>
+        <target>Désolé, vous avez perdu !</target>
+      </trans-unit>
+      <trans-unit id="207fe6e04836e39c578570b083304d52" resname="fail.subtitle">
+        <source>fail.subtitle</source>
+        <target>Partie terminée !</target>
+      </trans-unit>
+      <trans-unit id="bc3d9a20d7453fa3275a92ff916a26db" resname="fail.missed">
+        <source>fail.missed</source>
+        <target>Désolé, vous n'avez pas trouvé le mot %word% !</target>
+      </trans-unit>
+      <trans-unit id="65147fcb251c7f858cc0b69144c9c162" resname="win.title">
+        <source>win.title</source>
+        <target>Bravo, vous avez gagné !</target>
+      </trans-unit>
+      <trans-unit id="860bb697ed533110304ba279333c05c3" resname="win.subtitle">
+        <source>win.subtitle</source>
+        <target>Félicitations, vous avez gagné !</target>
+      </trans-unit>
+      <trans-unit id="41782659bb8b7d50f69fedac3da88c74" resname="win.congratulations">
+        <source>win.congratulations</source>
+        <target>Bravo, vous avez trouvé le mot %word% !</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

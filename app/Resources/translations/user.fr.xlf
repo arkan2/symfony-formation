@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="b3bb2f3a0735826a87f457845b0a858e" resname="login.title">
+        <source>login.title</source>
+        <target>Connexion à l'espace membre</target>
+      </trans-unit>
+      <trans-unit id="f6a7507c8f002b1e9091920898fb9b87" resname="login.subtitle">
+        <source>login.subtitle</source>
+        <target>Accédez à votre compte</target>
+      </trans-unit>
+      <trans-unit id="5b55b4e383bbb625f76b1d71b8d2f632" resname="login.form.username">
+        <source>login.form.username</source>
+        <target>Nom d'utilisateur :</target>
+      </trans-unit>
+      <trans-unit id="52b41d370fb660537a887feec3125428" resname="login.form.password">
+        <source>login.form.password</source>
+        <target>Mot de passe :</target>
+      </trans-unit>
+      <trans-unit id="c517946fb6e19610d71ef5e002d69842" resname="login.form.submit">
+        <source>login.form.submit</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="2412f936d39ef8f2d9e762a7d3334ec2" resname="register.form.password">
+        <source>register.form.password</source>
+        <target>Mot de passe :</target>
+      </trans-unit>
+      <trans-unit id="e9fe54ff98d39f4cfe7f7b58131f1aa5" resname="register.form.confirmation">
+        <source>register.form.confirmation</source>
+        <target>Confirmation :</target>
+      </trans-unit>
+      <trans-unit id="3c67c40c718a55079906871e254af072" resname="register.title">
+        <source>register.title</source>
+        <target>Ouvrir un compte gratuit</target>
+      </trans-unit>
+      <trans-unit id="d6c6c9206444436c9a230d4e2b07d3ed" resname="register.subtitle">
+        <source>register.subtitle</source>
+        <target>Créez votre compte gratuitement</target>
+      </trans-unit>
+      <trans-unit id="f40a44aff3561d27cebf7050c66e3ccc" resname="register.form.submit">
+        <source>register.form.submit</source>
+        <target>Créer mon compte</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

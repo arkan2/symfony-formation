@@ -1,0 +1,37 @@
+security:
+
+    role_hierarchy:
+        ROLE_ADMIN: ROLE_PLAYER
+        ROLE_SUPERADMIN: [ ROLE_PLAYER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH ]
+
+    encoders:
+        AppBundle\User\User: bcrypt
+
+    providers:
+        users:
+            id: app.user_manager
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt|error)|css|images|js)/
+            security: false
+
+        default:
+            provider: users
+            pattern: ^/
+            switch_user: ~
+            anonymous: ~
+            form_login:
+                login_path: app_login
+                check_path: app_login_check
+                username_parameter: my_login
+                password_parameter: my_secret
+                default_target_path: app_game
+                always_use_default_target_path: true
+            logout:
+                path: app_logout
+                target: app_login
+
+    access_control:
+        - { path: '^/(?:en|fr)/game', roles: ROLE_PLAYER }
+        - { path: '^/', roles: IS_AUTHENTICATED_ANONYMOUSLY }

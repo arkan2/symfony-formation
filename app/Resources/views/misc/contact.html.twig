@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'misc' %}
+
+{% block title 'contact.title'|trans %}
+{% block subtitle 'contact.subtitle'|trans %}
+
+{% block body %}
+
+    {{ form(form) }}
+
+{% endblock %}

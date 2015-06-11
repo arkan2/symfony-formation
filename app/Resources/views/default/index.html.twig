@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <p>
+        Hello {{ name|capitalize }}!
+    </p>
+
+    {% if app.request.clientIp starts with '127.0.0.1' %}
+        <p>
+            Welcome Admin!
+        </p>
+    {% endif %}
+
+{% endblock %}

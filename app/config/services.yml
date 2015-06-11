@@ -1,0 +1,15 @@
+services:
+    app.game_context:
+        class: AppBundle\Game\GameContext
+        arguments: [ '@session' ]
+
+    app.word_list:
+        class: AppBundle\Game\WordList
+        calls:
+            - [ addWord, [ pantalon ] ]
+            - [ addWord, [ logiciel ] ]
+            - [ addWord, [ bistouri ] ]
+
+    app.game_runner:
+        class: AppBundle\Game\GameRunner
+        arguments: [ '@app.game_context', '@?app.word_list' ]

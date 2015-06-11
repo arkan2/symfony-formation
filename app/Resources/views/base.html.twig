@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Hangman{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div id="logo">
+                    <h1>
+                        <a href="{{ path('app_game') }}">Hangman</a>
+                    </h1>
+                </div>
+                <div id="menu">
+                    <ul>
+                        <li class="first current_page_item">
+                            <a href="{{ path('app_game') }}">
+                                {{- 'menu.play'|trans -}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_register') }}">
+                                {{- 'menu.register'|trans -}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_login') }}">
+                                {{- 'menu.login'|trans -}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_contact') }}">
+                                {{- 'menu.contact'|trans -}}
+                            </a>
+                        </li>
+                    </ul>
+                    <br class="clearfix" />
+                </div>
+            </div>
+    
+            <div id="page">
+                <div id="content">
+                    
+                    {{ include('flashes.html.twig') }}
+
+                    <h2>
+                        {%- block subtitle %}{% endblock -%}
+                    </h2>
+                    {% block body %}{% endblock %}
+                </div>
+                <div id="sidebar">
+                    <h3>{{ 'sidebar.last_games'|trans }}</h3>
+                    <div class="date-list">
+                        <ul class="list date-list">
+                            <li class="first"><span class="date">Jan 13</span> <a href="#">Ultrices quisque molestie</a></li>
+                            <li><span class="date">Jan 7</span> <a href="#">Neque dolor eget</a></li>
+                            <li><span class="date">Jan 1</span> <a href="#">Sollicitudin interdum</a></li>
+                            <li class="last"><span class="date">Dec 26</span> <a href="#">Varius dignissim</a></li>
+                        </ul>
+                    </div>
+                    {{ render_esi(controller('AppBundle:User:sidebar')) }}
+                </div>
+                <br class="clearfix" />
+            </div>
+        </div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
