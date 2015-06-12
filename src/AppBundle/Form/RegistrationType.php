@@ -2,6 +2,7 @@
 
 namespace AppBundle\Form;
 
+use AppBundle\Form\AddCitySubscriber;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
@@ -39,25 +40,7 @@ class RegistrationType extends AbstractType
             ->add('terms', 'checkbox')
         ;
 
-        $builder->addEventListener(FormEvents::PRE_SUBMIT, function(FormEvent $event) {
-            $form = $event->getForm();
-            $cities = [
-                'FR' => [
-                    'Paris' => 'Paris',
-                    'Lyon' => 'Lyon',
-                    'Nancy' => 'Nancy'
-                ]
-                // ...
-            ];
-
-            $data = $event->getData();
-            $country = $data['country'];
-
-            $form = $event->getForm();
-            $form->add('city', 'choice', [
-                'choices' => $cities[$country]
-            ]);
-        });
+        $builder->addEventSubscriber(new \AppBundle\Form\EventSubscriber\AddCitySubscriber());
     }
 
     public function configureOptions(OptionsResolver $resolver)

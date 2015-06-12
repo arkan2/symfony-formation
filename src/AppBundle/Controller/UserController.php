@@ -57,6 +57,7 @@ class UserController extends Controller
 
         if ($form->isValid()) {
             //return $this->redirectToRoute('app_login');
+
         }
 
         return $this->render('user/register.html.twig', [
