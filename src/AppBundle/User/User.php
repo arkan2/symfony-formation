@@ -34,6 +34,8 @@ class User implements UserInterface
     private $password;
     private $salt;
 
+    private $city;
+
     /**
      * @Assert\NotBlank
      * @Assert\Length(min=2, max=50)
@@ -75,9 +77,40 @@ class User implements UserInterface
      */
     public $plainPassword;
 
+    private $creditBalance;
+
+    /**
+     * @return int
+     */
+    public function getCreditBalance()
+    {
+        return $this->creditBalance;
+    }
+
+    /**
+     * @param int $creditBalance
+     */
+    public function setCreditBalance($creditBalance)
+    {
+        $this->creditBalance = $creditBalance;
+    }
+
+    public function creditBalance($credits) {
+        $this->creditBalance += $credits;
+    }
+
+    public function debitBalance($credits) {
+        if($this->creditBalance < $credits) {
+            throw new \InvalidArgumentException('Not enough credits on balance');
+        }
+
+        $this->creditBalance -= $credits;
+    }
+
     public function __construct()
     {
         $this->permissions[] = 'ROLE_PLAYER';
+        $this->creditBalance = 0;
     }
 
     /**
@@ -112,6 +145,22 @@ class User implements UserInterface
     public function setPassword($password)
     {
         $this->password = $password;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * @param mixed $city
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
     }
 
     public function getSalt()

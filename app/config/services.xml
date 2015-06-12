@@ -6,6 +6,18 @@
 
     <services>
 
+        <service id="app.form.couponCode" class="AppBundle\Form\CouponCodeType">
+            <tag name="form.type" alias="app_coupon_code"/>
+        </service>
+
+        <service id="app.form.phone" class="AppBundle\Form\PhoneType">
+            <tag name="form.type" alias="app_phone"/>
+        </service>
+
+        <service id="app.form.registration" class="AppBundle\Form\RegistrationType">
+            <tag name="form.type" alias="app_registration"/>
+        </service>
+
         <service id="app.user_unique_validator" class="AppBundle\Validator\Constraints\UserUniqueValidator">
             <argument type="service" id="app.user_manager"/>
             <tag name="validator.constraint_validator" alias="app.user_unique_validator" />
@@ -18,6 +30,7 @@
         </service>
 
         <service id="app.game_runner" class="AppBundle\Game\GameRunner">
+            <argument type="service" id="event_dispatcher"/>
             <argument type="service" id="app.game_context"/>
             <argument type="service" id="app.word_list" on-invalid="ignore"/>
         </service>

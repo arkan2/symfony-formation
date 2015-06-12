@@ -2,6 +2,7 @@
 
 namespace AppBundle\Game;
 
+use Composer\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class GameRunner
@@ -21,18 +22,25 @@ class GameRunner
     private $wordList;
 
     /**
+     * @var EventDispatcher
+     */
+    private $dispatcher;
+
+    /**
      * Constructor.
      *
      * @param GameContextInterface $context
      * @param WordListInterface    $wordList
      */
     public function __construct(
+        EventDispatcherInterface $dispatcher,
         GameContextInterface $context,
         WordListInterface $wordList = null
     )
     {
         $this->context = $context;
         $this->wordList = $wordList;
+        $this->dispatcher = $dispatcher;
     }
 
     /**
@@ -55,6 +63,10 @@ class GameRunner
         $word = $this->wordList->getRandomWord($length);
         $game = $this->context->newGame($word);
         $this->context->save($game);
+
+        if($this->dispatcher->hasListeners(GameEvents::STARTED)) {
+            $this->dispatcher->dispatch(GameEvents::STARTED, new GameEvent($game));
+        }
 
         return $game;
     }

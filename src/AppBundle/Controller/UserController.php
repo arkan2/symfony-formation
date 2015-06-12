@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Form\RegistrationType;
+use AppBundle\Model\AccountRegistration;
 use AppBundle\User\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -50,14 +51,12 @@ class UserController extends Controller
      */
     public function registerAction(Request $request)
     {
-        $user = new User();
-        $form = $this->createForm(new RegistrationType(), $user);
+        $registration = new AccountRegistration();
+        $form = $this->createForm('app_registration', $registration);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $this->get('app.user_manager')->save($user);
-
-            return $this->redirectToRoute('app_login');
+            //return $this->redirectToRoute('app_login');
         }
 
         return $this->render('user/register.html.twig', [
